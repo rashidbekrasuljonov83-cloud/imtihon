@@ -40,20 +40,20 @@ a {
   font-family: "Inter", sans-serif;
 }
 
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
   row-gap: 74px;
 
   column-gap: 30px;
-}
-.child {
+} */
+/* .child {
   width: 100%;
-}
+} */
 
 .child:nth-child(1) {
-  max-width: 730px;
+  max-width: 630px;
   height: auto;
   grid-column: 1 / 3;
   grid-row: 1 / 2;
@@ -65,15 +65,20 @@ a {
   padding: 32px 24px;
   background-color: #00001a;
   grid-column: 3 / 4;
-  grid-row: 1 / 2;
+  grid-row: 1 / 3;
 }
 .child:nth-child(3) {
-  display: flex;
-  max-width: 1184px;
+  /* display: flex; */
+
   gap: 50px;
-  height: auto;
+  height: 200px;
   background-color: white;
-  grid-column: 1/4;
+  grid-column: 1/2;
+  grid-row: 2/2;
+}
+.child:nth-child(4) {
+  height: 200px;
+  grid-column: 2/3;
   grid-row: 2/3;
 }
 
@@ -82,14 +87,13 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.child h2 {
+.eee {
   display: flex;
   flex-direction: column;
   color: white;
   gap: 16px;
 }
 .title {
-  padding-top: 36px;
   width: 350px;
   font-size: 30px;
   font-weight: 800;
@@ -167,11 +171,6 @@ hr {
   border: 1px solid #333;
   margin: 20px 0;
 }
-.fff {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
 .vvv {
   margin-left: 24px;
@@ -196,8 +195,8 @@ hr {
   color: #f15d51;
 }
 
-.img3 {
-  max-width: 730px;
+.sdf {
+  width: 630px;
 }
 .vvv .text3 {
   font-size: 15px;
@@ -208,7 +207,8 @@ hr {
 } /* Asosiy Grid sozlamasi */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(2, 300px);
   gap: 30px;
 }
 
@@ -220,11 +220,24 @@ hr {
 
 /* 1110px dan kichik ekranlar uchun */
 @media (max-width: 1110px) {
+  .ftr {
+    display: flex;
+    flex-direction: column;
+  }
+  .fff {
+    flex-direction: column;
+  }
+  .child:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 300px);
   }
   .child:nth-child(1),
-  .child:nth-child(2) {
+  .child:nth-child(1),
+  .child:nth-child(1) {
     grid-column: span 1;
   }
   .child:nth-child(3) {
@@ -235,7 +248,12 @@ hr {
 /* 768px dan kichik (Mobil) ekranlar uchun */
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 290px);
+    grid-template-rows: repeat(6, 290px);
+    row-gap: 12px;
+  }
+  .sdf {
+    width: 330px;
   }
   .child:nth-child(1),
   .child:nth-child(2),
@@ -248,4 +266,15 @@ hr {
     flex-direction: column;
     height: auto;
   }
+}
+
+.ftr {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  margin: 100px auto;
 }
